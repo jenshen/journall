@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>
+            Login form
+        </title>
+        <link rel="stylesheet" type="text/css" href="header.css" />
+        <link rel="stylesheet" type="text/css" href="home_page.css" />
+    </head>
+    <body>
+        <?php
+            $success = false;
+            if (isset($_POST["user"]) && isset($_POST["password"])){
+            $db = mysql_connect("sql.mit.edu","edethy","Yahoo1");
+            if (!$db){
+                die('Could not connect:'. mysql_error());
+            }
+            mysql_select_db("6470site",$db) or die(mysql_error());
+            $username = $_POST["user"];
+            $password = sha1($_POST["password"]);
+            $query = "SELECT password FROM user_info WHERE username = '" . mysql_real_escape_string($username) . "'";
+            $result = mysql_query($query,$db);
+            $row = my_sql_fetch_assoc($result);
+            if ($password == $row['password'])
+            {
+                $name = mysql_query('SELECT name FROM user_info WHERE username = $username');
+                echo '$name successfully logged in';
+            }
+            else{
+                echo 'Invalid username or password';
+            }
+        }
+?>
+
+        <h1 align = 'center' id = login_header>Journ-all</h1>
+        <p id = 'reg_text'>Don't have an account?  <a href = 'registerform2.php'>Register</a> now!</p>
+        <form method = 'post' action = 'login.php'>
+        <p><label for = 'user'><div class = signin>username:</div></label><br/>
+            <input type = 'text' id = 'user' name = 'user'>
+        <label for = 'password'><div class = signin>password:</div></label><br/>
+        <input type = 'password' id = 'password' name = 'password'><br/></br>
+        <button type = 'submit' name = 'submit' value = 'send' div class = signin_reg>submit</div></button>
+        </p>
+        </form>
+    </body>
+</html>
