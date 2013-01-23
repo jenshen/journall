@@ -155,11 +155,11 @@
 		
 	</div>
 	
-	<form class="hello" method="post">
+	<form class="hello" action="hello.php" method="post">
 		<br>
 		<p>
 			<div style="width:600px; height:40px">
-				<input type="text" value="Journal Title" style="width:590px; font-size:120%">
+				<input type="text" value="Journal Title" name="title" style="width:590px; font-size:120%">
 			</div>
 			<div style="display:inline-block; width:730px; height:40px">
 				<input type="text" value="Locations" style="width:590px; font-family:'Lato', sans-serif; font-size:110%; margin-right:8px">
