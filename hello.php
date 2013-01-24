@@ -18,7 +18,7 @@ $user_id = $_SESSION['user_id'];
 $title = mysql_real_escape_string($_POST['title']);
 $city = mysql_real_escape_string($_POST['locations']);
 /* Do we want the date to be current date or date of trip?
- * We can just use the now function if today's date*/
+ * We can just use the date function if date posted*/
 $query = "INSERT INTO journals (user_id, title, text, date_posted)
 VALUES ('$user_id', '$title', '$text', DATE()) ";
 mysql_query($query);
