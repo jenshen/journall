@@ -15,8 +15,8 @@ mysql_select_db("edethy+6470site",$db) or die(mysql_error());
 
 $text = mysql_real_escape_string($_POST['editor1']);
 $user_id = $_SESSION['user_id'];
-$title = mysql_real_escape_string($_POST['something_from_the_editor']);
-$city = mysql_real_escape_string($_POST['something_else_from_editor']);
+$title = mysql_real_escape_string($_POST['title']);
+$city = mysql_real_escape_string($_POST['locations']);
 /* Do we want the date to be current date or date of trip?
  * We can just use the now function if today's date*/
 $query = "INSERT INTO journals (user_id, title, text, date_posted)
