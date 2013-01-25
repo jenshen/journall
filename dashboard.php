@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Journal page</title>
+	<title>Dashboard</title>
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 		body {
@@ -21,32 +21,31 @@
 		.logo {
 			float: left;
 		}
-		#sidemenu {
-			list-style-type:none;
+		.content {
+			width: 760px;
+			height: 100%;
+			margin: 0px auto;
+			position: relative;
+			left: 10px;
+			height: 900px;
+			padding: 1.5em;
 		}
-		#sidemenu li{
-			background-image: url(images/tab.png);
-			background-repeat: no-repeat;
-			height:120px;
-			width:40px;
-			float:top;
-			margin-top:-5px;
-			position:relative;
+		.journals {
+			float: left;
+			border: 2px solid rgb(154,227,178);
+			margin-right: 10px;
+			width: 68%;
+			positon: relative;
+			padding: .5em;
+			background-color: rgba(255,255,255,0.5);
 		}
-		#sidemenu li a {
-			height:120px;
-			width:120px;
-			display:block;
-			text-decoration:none;
-			text-align: center;
-
-		}
-		#sidemenu li a {
-			-webkit-transform: rotate(90deg);  
-			-moz-transform: rotate(90deg);
-			-ms-transform: rotate(90deg);
-			-o-transform: rotate(90deg);
-			transform: rotate(90deg); 
+		.profile {
+			float: left;
+			border: 2px solid rgb(154,227,178);
+			width: 25%;
+			height: 200px;
+			padding: .5em;
+			background-color: rgba(255,255,255,0.75);
 		}
 		#menu {
 			list-style-type: none;
@@ -98,8 +97,8 @@
 			padding-right: 10px;
 		}
 		.hello {
-			width: 750px;
-			height: 900px;
+			width: 730px;
+			height: 600px;
 			position: relative;
 			margin: 0 auto;
 			left: 10px;
@@ -110,7 +109,7 @@
 		input[type=text] {
 			color: rgba(0,0,0,0.5);
 		}
-		input[type=submit], input[type=button] {
+		input[type=submit] {
 			color: rgba(0,0,0,0.5);
 			background-color: rgb(171,232,191);
 			-moz-border-radius:6px;
@@ -151,43 +150,25 @@
 					<li id="welcomeuser">Welcome, User!</li>
 				</ul>
 			</div>
+		</div>
 		
-			<div style="position:relative; left:812px;top:120px">
-				<ul id="sidemenu">
-					<li style="z-index:100; background-image: url(images/currenttab.png);"><a href="" >current page</a></li>
-					<li style="z-index:99"><a href="">+</a></li>
-					<li style="z-index:98"><a href="">+</a></li>
-					<li style="z-index:97"><a href="">+</a></li>
-					<li style="z-index:96"><a href="">+</a></li>
-				</ul>
+		<div class="content">
+			<div class="journals">
+				<b>My Journals</b>
+			</div>
+			
+			<div class="profile">
+				<p>
+				Name <br>
+				Email
+				</p>
+				
+				<p>
+				My Vacation Bucket List:
+				</p>
 			</div>
 		</div>
 	</div>
-	
-	<form class="hello" action="hello.php" method="post">
-		<br>
-		<p>
-			<div style="width:760px; height:40px">
-				<input type="text" placeholder="Journal Title" name="title" style="width:76%; font-size:120%">
-			</div>
-			<div style="display:inline-block; width:760px; height:40px">
-				<input type="text" placeholder="Locations" style="width:76%; font-family:'Lato', sans-serif; font-size:110%; margin-right:8px">
-				<input type="text" placeholder="Date" style="width:20%; font-family:'Lato', sans-serif; font-size:110%">
-			</div>
-		</p>
-		<p>
-            <textarea name="editor1"></textarea>
-            <script>
-                CKEDITOR.replace( 'editor1' );
-            </script>
-		</p>
-		<p>
-			<input type="button" value="Save As Draft" style="float:right">
-			<input type="submit" value="Submit" style="float:right; background-color: rgb(9,84,84); margin-right:10px; margin-bottom: 50px">
-		</p>
-	</form>
-	
-
 	
 </body>
 </html>
