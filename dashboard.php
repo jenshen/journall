@@ -126,6 +126,27 @@
 			background-color:#dfdfdf;
 			cursor:pointer;
 		}
+		.journalopts {
+			
+		}
+		#checkbox {
+			margin-right: 10px;
+			padding: 5px;
+			background: rgb(240,240,240);
+			border: 1px solid #E8E8E8;
+			height: 15px;
+			width: 15px;
+			float: left;
+			
+		}
+		button {
+			background: rgb(240,240,240);
+			border: 1px solid #E8E8E8;
+			float: left;
+			height: 15px;
+			width: 25px;
+			padding: 5px;
+		}
 
 	</style>
 	
@@ -155,6 +176,13 @@
 		<div class="content">
 			<div class="journals">
 				<b>My Journals</b>
+				<div class="journalopts">
+					<div id="checkbox"><input type="checkbox" style="margin: 0 auto"></div>
+					<div>
+						<button>Publish</button>
+						<button>Trash</button>
+					</div>
+				</div>
 			</div>
 			
 			<div class="profile">
